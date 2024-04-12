@@ -1,0 +1,207 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(100deg, #000000, #593f85);
+    background-size: 120% 120%;
+    color: #ddd;
+}
+
+body::-webkit-scrollbar {
+    background-color: #593f85;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    text-align: center;
+}
+
+.menu .li-menu {
+    font-family: "Poppins", sans-serif;
+    background-color: #593f85;
+    cursor: pointer;
+}
+
+.menu .li-menu.desktop {
+    color: #593f85;
+    margin-bottom: 5px;
+    padding: 5px;
+    position: relative;
+    left: -85%;
+    transition: .5s ease;
+}
+
+.menu .li-menu.desktop:hover,
+.menu .li-menu.desktop.selecionado {
+    left: 0;
+    color: #ddd;
+}
+
+.menu .li-menu.mobile {
+    display: none;
+    padding: 5px 10px;
+    border: 1px solid #593f85;
+    transition: .2s ease;
+}
+
+.menu .li-menu.mobile:hover,
+.menu .li-menu.mobile.selecionado {
+    transform: scale(1.15);
+    border: 1px solid;
+}
+
+.d-none {
+    display: none;
+}
+
+main {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+main .sec {
+    width: 50%;
+    height: 100vh;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec.sec-sinopse {
+    padding: 20px 10px 20px 50px;
+    flex-direction: column;
+}
+
+.sec.sec-sinopse .container {
+    /* border: 1px solid yellow; */
+    flex-direction: column;
+    height: 220px;
+}
+
+.sec.sec-sinopse .container #title {
+    font-family: "Gwendolyn", cursive;
+    font-size: 50px;
+    text-align: center;
+    line-height: 45px;
+    color: #eee;
+}
+
+.sec.sec-sinopse .container #informacoes {
+    margin: 20px 0 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+}
+
+.sec.sec-sinopse .container #informacoes li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.sec.sec-sinopse .container .subtitle {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 30px;
+}
+
+.sec.sec-sinopse #sinopse {
+    max-height: calc(100% - 220px);
+    width: 100%;
+    overflow: auto;
+    font-family: "Solway", serif;
+    font-size: 18px;
+    padding-right: 5px;
+}
+
+.sec.sec-sinopse #sinopse p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.sec.sec-sinopse #sinopse .frase {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+}
+
+.sec.sec-sinopse #sinopse p strong {
+    font-family: "Poppins", sans-serif;
+}
+
+.sec.sec-livros {
+    flex-wrap: wrap;
+    gap: 30px 50px;
+    overflow-y: auto;
+    max-height: 100%;
+    padding: 30px 0px 20px;
+}
+
+.sec.sec-livros .livro {
+    height: 210px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.sec.sec-livros .livro:hover {
+    transform: scale(1.1);
+}
+
+.sec.sec-livros .livro.selecionado {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px #7d5ab9;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px 25px;
+        padding: 10px;
+        position: static;
+    }
+
+    .menu .li-menu.desktop {
+        display: none;
+    }
+
+    .menu .li-menu.mobile {
+        display: block;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    main .sec {
+        height: auto;
+        width: 100%;
+    }
+
+    .sec.sec-sinopse {
+        padding: 20px 0px;
+        border-bottom: 1px solid;
+        width: 94%;
+    }
+
+    .sec.sec-sinopse .container {
+        height: auto;
+    }
+
+    .sec.sec-livros {
+        padding: 40px 0;
+    }
+
+    .sec.sec-livros {
+        gap: 20px;
+    }
+
+    .sec.sec-livros .livro {
+        height: 190px;
+    }
+}
